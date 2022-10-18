@@ -1,13 +1,98 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.book {
+    height: 420px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.cont {
+    max-width: 1900px;
+}
+
+
+.left {
+    min-width: 230px;
+    max-width: 900px;
+}
+
+
+.cover {
+    height: 400px;
+}
+
+
+.outlin {
+    max-width: 1300px;
+    border-radius: 10px;
+    justify-content: space-evenly;
+}
+
+.img {
+    border-radius: 13px;
+}
+
+
+.text {
+    max-width: 866px;
+}
+
+
+.end {
+    min-width: 200px;
+}
+
+.del {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.exit {
+    bottom: 18px;
+    left: 19px;
+}
+
+.exit:hover {
+    color: rgb(79, 79, 79);
+}
+
+
+.bot {
+    display: flex;
+    justify-content: center;
+}
+
+.end-cont {
+    width: 1300px;
+}
+
+
+.price {
+    width: 130px;
+    border-radius: 5px;
+    padding: 16px;
+}
+
+.bor {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.left-container {
+    width: 510px;
+}
+
+
+.right-container {
+    min-width: 320px;
+}
+
+
+.home-image {
+    width: 320px;
+    height: 450px;
+    border-radius: 10px;
+    cursor: pointer;
 }
