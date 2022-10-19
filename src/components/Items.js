@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "../index.css";
-import cover from "../cover.jpg";
 import { useParams } from "react-router-dom";
 import bookData from "../data.json";
+import { useSelector, useDispatch } from "react-redux";
+import { addToCart } from "../features/cart";
 
 function Items() {
   const [book, setBook] = useState(null);
+  const [quantity, setQuantity] = useState(1);
   let { id } = useParams();
+
+  const { value } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     for (let i = 1; i <= bookData.length; i++) {
@@ -15,6 +20,19 @@ function Items() {
       }
     }
   }, []);
+
+  function addCart() {
+    let bookCopy = {
+      id: book.id,
+      title: book.title,
+      description: book.description,
+      image_url: book.image_url,
+      price: parseFloat((book.Price * quantity).toFixed(2)),
+      quantity: quantity,
+    };
+
+    dispatch(addToCart(bookCopy));
+  }
 
   return (
     <>
@@ -36,12 +54,18 @@ function Items() {
                 Quantity:
                 <input
                   type="number"
-                  className=" bg-gray-200 w-20 rounded ml-2 pl-2"
-                  value="1"
+                  className=" bg-gray-200 outline w-20 rounded ml-2 pl-2"
+                  value={quantity}
+                  onChange={(value) =>
+                    setQuantity(parseInt(value.target.value))
+                  }
                 />
               </h1>
             </div>
-            <button className="shadow-lg hover:shadow-xl bg-gray-300 w-full p-2 rounded-md text-xl">
+            <button
+              onClick={() => addCart()}
+              className="shadow-lg hover:shadow-xl bg-gray-300 w-full p-2 rounded-md text-xl"
+            >
               Add To Cart
             </button>
           </div>

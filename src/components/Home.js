@@ -1,6 +1,5 @@
 import React from "react";
 import "../index.css";
-import Cover from '../cover.jpg';
 import { Link } from "react-router-dom";
 
 function Home() {

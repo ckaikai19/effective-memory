@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 
+body {
+    background-color: #E5E5E5;
+}
+
 .book {
     height: 420px;
+    width: 270px;
 }
 
 .cont {
@@ -27,6 +32,7 @@
     max-width: 1300px;
     border-radius: 10px;
     justify-content: space-evenly;
+    margin: 0px 34px;
 }
 
 .img {
@@ -95,4 +101,16 @@
     height: 450px;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.bord {
+    /* border: 1px solid pink; */
+    display: flex;
+    justify-content: center;
+}
+
+.empty {
+    margin-top: 20px;
+    width: 250px;
+    height: 250px;
 }
