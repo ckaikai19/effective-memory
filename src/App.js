@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Items from "./components/Items";
 import Cart from "./components/Cart";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -26,6 +27,18 @@ function App() {
         <Route path="/item/:id" element={<Items />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </Router>
   );
 }

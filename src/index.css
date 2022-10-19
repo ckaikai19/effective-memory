@@ -1,10 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+*{
+    user-select: none;
+}
 
 body {
     background-color: #E5E5E5;
+}
+
+header h1:hover{
+    color: rgb(66, 66, 66);
+    cursor: pointer;
+
 }
 
 .book {
